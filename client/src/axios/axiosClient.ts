@@ -3,9 +3,9 @@ import axios from 'axios';
 
 // const IP_PORT = process.env.NODE_PROD_URL
 const dev = "http://localhost:5000/api/v1/";
-const prod = "https://api.dkacademy.co.in/api/v1/";
+const prod = process.env.REACT_APP_PRODUCTION_SERVER;
 
-const baseURL = dev;
+const baseURL = prod;
 
 const axiosClient = axios.create({
     baseURL: baseURL,
