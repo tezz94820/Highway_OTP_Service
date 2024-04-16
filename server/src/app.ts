@@ -29,9 +29,6 @@ if (process.env.NODE_ENV === 'development') {
 }
 
 //routes
-app.get('/health', (req, res) => {
-    res.status(200).send({ message: 'Server is up and running' });
-});
 app.use('/api/v2', indexRoutes);
 
 //starting the server
