@@ -24,6 +24,7 @@ const SignIn = () => {
       localStorage.setItem('token', token);
       localStorage.setItem('user_id', user_id);
       localStorage.setItem('email', email);
+      toast.success('Logged in successfully');
       navigate('/');
     } catch (error:any) {
       const message = error.response.data.message || 'An Error Occured';

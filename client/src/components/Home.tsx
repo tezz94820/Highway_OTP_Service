@@ -27,7 +27,8 @@ const Home = () => {
 
     const handleLogout = () => {
         localStorage.clear();
-        window.location.reload();
+        setPersonalDataClicked(false);
+        toast.success('Logged out successfully');
     }
 
 

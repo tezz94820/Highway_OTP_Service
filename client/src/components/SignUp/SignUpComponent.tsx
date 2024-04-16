@@ -10,9 +10,11 @@ const SignUpComponent = () => {
     const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState<boolean>(false);
     const [showRetypePassword, setShowRetypePassword] = useState<boolean>(false);
+    const [ signUpLoading, setSignUpLoading ] = useState<boolean>(false);
 
     const handleSignUp = async (event: FormEvent): Promise<void> => {
         event.preventDefault();
+        setSignUpLoading( prev => !prev)
         const formData = {
             first_name: (event.target as HTMLFormElement).first_name.value,
             last_name: (event.target as HTMLFormElement).last_name.value,
@@ -30,10 +32,12 @@ const SignUpComponent = () => {
             const { check, verification_code }  = otpResponse.data.data;
             sessionStorage.setItem('check', check);
             sessionStorage.setItem('verification_code', verification_code);
+            setSignUpLoading( prev => !prev);
             navigate('/signup/otp');
             toast.success('OTP sent successfully');
         } catch (error: any) {
             const message = error.response.data.message || 'An Error Occured';
+            setSignUpLoading( prev => !prev);
             toast.error(message);
         }
 
@@ -80,7 +84,15 @@ const SignUpComponent = () => {
                     <input type="email" name="email" placeholder='Email' className='focus:outline-none bg-transparent leading-loose text-xl font-semibold border-b-2 border-gray-400/50' required />
                 </div>
                 <div className='flex flex-col gap-5 '>
-                    <button type="submit" className='w-full py-5 bg-[#3A244A] rounded-2xl text-white text-xl sm:text-2xl font-semibold'>Sign Up</button>
+                    <button type="submit" className='w-full py-5 bg-[#3A244A] rounded-2xl text-white text-xl sm:text-2xl font-semibold'>
+                        {
+                            signUpLoading 
+                            ?
+                            <span className="loading loading-spinner loading-lg"></span>
+                            :
+                            <p>Sign Up</p>
+                        }
+                    </button>
                 </div>
             </form>
         </div>
