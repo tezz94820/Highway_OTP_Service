@@ -1,3 +1,7 @@
+# Deployed Link
+1. Link :- (https://highwayapi.dkacademy.co.in/api/v2/health)
+2. The server is deployed on AWS EC2 using Nginx as a load Balancer and proxy. 
+
 # Building the Porject
 
 1. Add the below mentioned env variables 
@@ -56,7 +60,7 @@ References :-
 # Authentication :- 
 1. JWT tokens are used for authenticating the users.
 2. Brypt is used to hash the password ans store in the database. for safety from hackers even if they get access of database they won't be able to crack the password.
-## I have written article on bcrypt talkign in depth how hashing is done using bcrypt and its salt. Even talked about the Rainbow tables  
+## I have written article on bcrypt talking in depth how hashing is done using bcrypt and its salt. Even talked about the Rainbow tables  
 (https://medium.com/@tejasitankar94820/bcrypt-decoded-the-key-to-unbreakable-passwords-a42c74df6f0b)
 
 

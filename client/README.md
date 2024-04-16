@@ -1,3 +1,7 @@
+# Deployed Link 
+1. Link :- (https://highway-otp-service.onrender.com/)
+2. It is deplyed on render.
+
 # Building the Porject
 
 1. `npm install` :- To install all the dependencies.
@@ -6,3 +10,6 @@
 # Environment Variables to be added in .env file in the root dir of client folder
 
 1. `REACT_APP_PRODUCTION_SERVER` :- backend server api. 
+
+
+
