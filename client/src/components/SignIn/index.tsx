@@ -42,7 +42,7 @@ const SignIn = () => {
           <div className='flex flex-col gap-10 mt-16 mb-10'>
             <input type="email" name="email" placeholder='Email' className='focus:outline-none bg-transparent leading-loose text-xl font-semibold border-b-2 border-gray-400/50' required/>
             <div className='flex flex-row items-center justify-between border-b-2 border-gray-400/50'>
-              <input type="password" name="password" placeholder='Password' className='focus:outline-none bg-transparent leading-loose text-xl font-semibold w-full pr-5' required/>
+              <input type={showPassword ? 'text' : 'password'} name="password" placeholder='Password' className='focus:outline-none bg-transparent leading-loose text-xl font-semibold w-full pr-5' required/>
                 {
                   showPassword 
                   ?
