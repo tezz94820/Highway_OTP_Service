@@ -1,4 +1,4 @@
-# Deployed Link
+8# Deployed Link
 1. Link :- (https://highwayapi.dkacademy.co.in/api/v2/health)
 2. The server is deployed on AWS EC2 using Nginx as a load Balancer and proxy. 
 
@@ -44,11 +44,12 @@
 
 8. Now the server will decrypt the verification_code and get the OTP_ID. Verification_code is decrypted and OTP_ID and email is extracted from it.
 
-    `Decryption(verification_code) = OTP + OTP_ID _ EMAIL`
+    `Decryption(verification_code) = OTP + OTP_ID + EMAIL`
     1. If we founf that decryption is unsuccessful then something is tampered. Stop the entire Process. 
     2. Using OTP_ID we will search in the db for and get the assigned OTP , then we will match with the user provided OTP to check if the user has provided it correctly. 
-    3. We wi;; also check the email provided by the req and email from decrypted verification_code to check if the correct user has given the OTP.
+    3. We will also check the email provided by the req and email from decrypted verification_code to check if the correct user has given the OTP.
 9. The OTP will be successfully verified.
+10. The client can generate 3 opt in 1 hour at max, if the client finishes its 3 attempts of getting otp then next otp can be asked after 1 hour.
 
 References :- 
 1. Medium Article : https://medium.com/geekculture/how-to-make-a-scalable-otp-service-3df8300941ba
