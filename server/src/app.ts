@@ -32,7 +32,7 @@ if (process.env.NODE_ENV === 'development') {
 app.get('/health', (req, res) => {
     res.status(200).send({ message: 'Server is up and running' });
 });
-app.use('/api/v1', indexRoutes);
+app.use('/api/v2', indexRoutes);
 
 //starting the server
 const port = process.env.PORT
