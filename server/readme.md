@@ -1,5 +1,5 @@
 8# Deployed Link
-1. Link :- (https://highwayapi.dkacademy.co.in/api/v2/health)
+1. Link :- (https://api.dkacademy.co.in/api/v2/health)
 2. The server is deployed on AWS EC2 using Nginx as a load Balancer and proxy. 
 
 # Building the Porject
